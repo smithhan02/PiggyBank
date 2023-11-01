@@ -28,12 +28,13 @@
     />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="static/css/styles.css" rel="stylesheet" />
-  </head>
+    <link href="static/css/mystyles.css" rel ="stylesheet"/>
+</head>
   <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">Piggy Bank</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -60,14 +61,16 @@
     <!-- Page Header-->
     <header
       class="masthead"
-      style="background-image: url('static/assets/img/home-bg.jpg')"
+      style="background-image: url('static/assets/img/piggyThree.webp')"
     >
       <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1>Piggy Bank</h1>
+              <span class="subheading"
+                >A Website for all your Money Tracking Needs</span
+              >
             </div>
           </div>
         </div>
@@ -79,58 +82,88 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
           <!-- Post preview-->
           <div class="post-preview">
-            <a href="post.html">
+            <a>
               <h2 class="post-title">
-                Man must explore, and this is exploration at its greatest
+                Set Goals for Your Savings
               </h2>
               <h3 class="post-subtitle">
-                Problems look mighty small from 150 miles up
+                Saving money is like planting a seed. When you have a goal, you water that seed, and it grows into something amazing.
               </h3>
             </a>
-            <p class="post-meta">
-              Posted by
-              <a href="#!">Start Bootstrap</a>
-              on September 24, 2023
-            </p>
+            <br>
+            <div>
+                <input class="banana"
+                type="text"
+                id="goal-amount"
+                placeholder="Enter Goal Amount"
+                />
+                <button class="yellow" id="set-goal-button">Set Goal</button>
+                <br />
+                <p>Goal: $<span id="goal">0.00</span></p>
+            <div>
           </div>
           <!-- Divider-->
           <hr class="my-4" />
           <!-- Post preview-->
           <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">Failure is not an option</h2>
+            <a>
+              <h2 class="post-title">Deposit or Withdraw Money</h2>
               <h3 class="post-subtitle">
-                Many say exploration is part of our destiny, but it’s actually
-                our duty to future generations.
+               Depositing is when you put money into your savings place like a piggy bank. Withdrawing is when you take that saved money out to buy toys or treats.
               </h3>
             </a>
-            <p class="post-meta">
-              Posted by
-              <a href="#!">Start Bootstrap</a>
-              on July 8, 2023
-            </p>
-          </div>
-          <!-- Divider-->
-          <hr class="my-4" />
-          <!-- Pager-->
-          <div class="d-flex justify-content-end mb-4">
-            <a class="btn btn-primary text-uppercase" href="#!"
-              >Older Posts →</a
-            >
-          </div>
-          <div>
-            <p>Balance: $<span id="balance">0.00</span></p>
-            <input type="text" id="amount" placeholder="Enter Amount" />
-            <input
+            <br>
+            <div>
+                <input class="banana"
               type="text"
               id="description"
               placeholder="Enter Description"
             />
+            <input class="banana" type="text" id="amount" placeholder="Enter Amount" />
             <!-- Add input for description -->
             <br />
-            <button id="add-expense">Add Expense</button>
-            <button id="add-deposit">Add Deposit</button>
-            <ul id="transactions-list"></ul>
+            <br />
+            <button class="yellow" id="add-expense">Withdraw</button>
+            <button class="yellow" id="add-deposit">Deposit</button>
+            <br />
+            </div>
+          </div>
+        
+          <!-- Divider-->
+          <hr class="my-4" />
+          <!-- Pager-->
+          <div class="post-preview">
+            <a>
+              <h2 class="post-title">View Progress</h2>
+              <h3 class="post-subtitle">
+               Your balance is how much money you currenlty have.
+              </h3>
+            </a>
+              <p>Balance: $<span id="balance">0.00</span></p>
+            <a>
+                <h3 class="post-subtitle">
+                   Your goal progress left is how much more you need to save to reach your savings goal.
+                </h3> 
+            </a>
+            <p>Goal Progress Left: $<span id="goal-progress"
+                  >0.00</span>
+            </p>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+        <!-- Post preview-->
+        <div class="post-preview">
+            <a>
+            <h2 class="post-title">Transaction History</h2>
+            <h3 class="post-subtitle">
+                Here is a list of your past transactions. You can keep track of what you have spent money on and what money you have earned.
+            </h3>
+            </a>
+            <div>
+                <ul id="transactions-list"></ul>
+            </div>
+        </div> 
+            
           </div>
         </div>
       </div>
@@ -140,34 +173,8 @@
       <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item">
-                <a href="#!">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#!">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#!">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
             <div class="small text-center text-muted fst-italic">
-              Copyright &copy; Your Website 2023
+              Copyright &copy; Piggy Bank 2023
             </div>
           </div>
         </div>
@@ -180,6 +187,7 @@
     <script>
       let balance = 0.0;
       let transactions = [];
+      let goal = 0.0;
 
       document
         .getElementById("add-expense")
@@ -187,6 +195,32 @@
       document
         .getElementById("add-deposit")
         .addEventListener("click", addDeposit);
+
+      // Function to update the goal progress
+      function updateGoalProgress() {
+        const goalElement = document.getElementById("goal");
+        const goalProgressElement = document.getElementById("goal-progress");
+
+        goalElement.innerHTML = goal.toFixed(2);
+        const remainingProgress = goal - balance;
+        goalProgressElement.innerHTML = remainingProgress.toFixed(2);
+      }
+
+      // Function to set a new goal
+      function setGoal() {
+        const goalAmountInput = document.getElementById("goal-amount");
+        const goalAmount = parseFloat(goalAmountInput.value);
+        if (!isNaN(goalAmount)) {
+          goal = goalAmount;
+          updateGoalProgress();
+          goalAmountInput.value = ""; // Clear the input
+        }
+      }
+
+      // Attach an event listener to the "Set Goal" button
+      document
+        .getElementById("set-goal-button")
+        .addEventListener("click", setGoal);
 
       function updateBalance(amount) {
         balance += amount;
@@ -196,6 +230,7 @@
       function recordTransaction(type, amount, description) {
         transactions.push({ type, amount, description }); // Store type, amount, and description
         updateTransactionList();
+        updateGoalProgress();
       }
 
       function updateTransactionList() {
@@ -205,30 +240,42 @@
           const listItem = document.createElement("li");
           listItem.textContent = `${
             transaction.type
-          }: $${transaction.amount.toFixed(2)} - ${transaction.description}`;
+          } - $${transaction.amount.toFixed(2)} (${
+            transaction.description || "No description"
+          })`;
           transactionsList.appendChild(listItem);
         });
       }
 
       function addExpense() {
+        const amountInput = document.getElementById("amount");
+        const descriptionInput = document.getElementById("description");
         const amount = parseFloat(document.getElementById("amount").value);
         const description = document.getElementById("description").value; // Get description
 
         if (!isNaN(amount)) {
           updateBalance(-amount);
           recordTransaction("Expense", amount, description); // Pass description
+          amountInput.value = "";
+          descriptionInput.value = "";
         }
       }
 
       function addDeposit() {
+        const amountInput = document.getElementById("amount");
+  const descriptionInput = document.getElementById("description");
         const amount = parseFloat(document.getElementById("amount").value);
         const description = document.getElementById("description").value; // Get description
 
         if (!isNaN(amount)) {
           updateBalance(amount);
           recordTransaction("Deposit", amount, description); // Pass description
+          amountInput.value = "";
+          descriptionInput.value = "";
         }
       }
+
+      updateGoalProgress();
     </script>
   </body>
 </html>

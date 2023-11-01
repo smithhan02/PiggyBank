@@ -1,0 +1,20 @@
+.yellow {
+  color: white; /* Set text color to white */
+  background-color: #d43f46; /* Set background color to #d43f46 */
+  border: 2px solid #d43f46;
+  border-radius: 10px;
+}
+
+.yellow:hover {
+  border: 4px solid #d43f46;
+  transition: border-color 0.03s, border-width 0.03s;
+}
+
+.banana {
+  border: 1px solid #000000; /* Set the default border style */
+  transition: border-color 0.03s, border-width 0.03s; /* Add a smooth transition effect */
+}
+
+.banana:hover {
+  border: 3px solid #fee082; /* Change border color to #fee082 and thickness on hover */
+}
